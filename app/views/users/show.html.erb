@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'Microposts', microposts_path %></th>
+      <th>User</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.microposts.each do |post| %>
+      <tr>
+        <td><%= post.content %></td>
+        <td><%= post.user_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
